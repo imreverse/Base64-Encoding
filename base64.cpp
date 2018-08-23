@@ -68,9 +68,11 @@ int main()
     do
     {
         getline(cin, s);
+        if( s=="\n" )
+            break;
         paragraph += s + "\n";
     }while(s.length() > 0);
-    paragraph[paragraph.length()-1] = ' ';
+    paragraph.erase(paragraph.length()-2);
     //cout<<paragraph;
     cout<<"\nCorresponding Base64 Encoded string: \n";
     cout<<base64(paragraph)<<"\n";
