@@ -63,7 +63,15 @@ int main()
     cout<<"=BASE64 ENCODING==========================\n";
     cout<<"\nInput your string: \n";
     string s;
-    getline(cin,s);
+    //getline(cin,s);
+    string paragraph;
+    do
+    {
+        getline(cin, s);
+        paragraph += s + "\n";
+    }while(s.length() > 0);
+    paragraph[paragraph.length()-1] = ' ';
+    //cout<<paragraph;
     cout<<"\nCorresponding Base64 Encoded string: \n";
-    cout<<base64(s)<<"\n";
+    cout<<base64(paragraph)<<"\n";
 }
